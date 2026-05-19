@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TZDC — Método Rodrigo Lima</title>
+  <meta name="description" content="Vencer a timidez no trabalho, um dia de cada vez. O método que funcionou na vida real, agora no seu bolso." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- TELA 1: AVISO -->
+  <div class="screen active" id="s-aviso">
+    <div class="aviso-top">
+      <div class="logo">T<span>Z</span>DC</div>
+      <div class="logo-sub">Método Rodrigo Lima</div>
+    </div>
+    <div class="aviso-body">
+      <h1 class="welcome-title">Bem-vindo.<br>Você deu um passo importante.</h1>
+      <p class="welcome-txt">O TZDC nasceu de uma história real — a de alguém que ficava com o rosto completamente vermelho só de alguém chegar e dizer "bom dia". Décadas depois, essa mesma pessoa construiu uma carreira no alto escalão do relacionamento corporativo brasileiro. Este app é o método que funcionou nessa jornada, adaptado para você.</p>
+      <div class="notice">
+        <i class="ti ti-heart notice-icon" aria-hidden="true"></i>
+        <div class="notice-txt">
+          <strong>Uma palavra antes de começar</strong>
+          O TZDC é um programa de desenvolvimento pessoal — não substitui acompanhamento com um psicólogo ou psiquiatra. Se você se identificar com algum destes sinais, considere buscar apoio profissional:
+          <div class="sign"><div class="sign-dot"></div><span>Crise de nervosismo intensa que impede atividades do dia a dia</span></div>
+          <div class="sign"><div class="sign-dot"></div><span>Isolamento progressivo afetando saúde ou trabalho</span></div>
+          <div class="sign"><div class="sign-dot"></div><span>Sofrimento emocional persistente que vai além da timidez</span></div>
+        </div>
+      </div>
+      <label class="check-row" for="chk-aceite">
+        <div class="chk" id="chk-visual"><i class="ti ti-check" aria-hidden="true"></i></div>
+        <input type="checkbox" id="chk-aceite" style="display:none" onchange="toggleAviso(this)" />
+        <span class="check-lbl">Entendi que o TZDC é um programa de desenvolvimento pessoal, não um tratamento profissional.</span>
+      </label>
+      <p class="footer-txt">Ao continuar você confirma ter 18 anos ou mais e concorda com os <a href="pages/termos.html" target="_blank">Termos de Uso</a> e a <a href="pages/privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+      <button class="btn-primary" id="btn-continuar" disabled onclick="show('s-planos')">Começar minha jornada</button>
+    </div>
+  </div>
+
+  <!-- TELA 2: PLANOS -->
+  <div class="screen" id="s-planos">
+    <div class="topbar">
+      <div class="topbar-logo">T<span>Z</span>DC</div>
+      <div class="topbar-sub">escolha seu plano</div>
+    </div>
+    <div class="scroll-body">
+      <div class="tier" onclick="iniciarJornada('Origem', 1)">
+        <div class="tier-head">
+          <div><div class="tier-name">TZDC Origem</div><div class="tier-desc-sm">Diagnóstico + guia personalizado</div></div>
+          <div class="tier-price-wrap"><div class="tier-price">R$14,90</div><div class="tier-price-sub">pagamento único</div></div>
+        </div>
+        <p class="tier-desc">Descubra seu perfil de timidez com base em pesquisa comportamental e receba um relatório completo gerado por IA — único para você.</p>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Questionário em 8 etapas com base científica</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Relatório personalizado com pontos de atenção</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> 5 dicas práticas para o seu perfil específico</div>
+        <div class="limit-pill"><i class="ti ti-info-circle" aria-hidden="true"></i> 1 geração de relatório incluída</div>
+      </div>
+
+      <div class="tier featured" onclick="iniciarJornada('Método', 30)">
+        <div class="badge-pop">Mais popular</div>
+        <div class="tier-head">
+          <div><div class="tier-name">TZDC Método</div><div class="tier-desc-sm">Coach IA + desafios + gamificação</div></div>
+          <div class="tier-price-wrap"><div class="tier-price">R$39,90</div><div class="tier-price-sub">/mês</div></div>
+        </div>
+        <p class="tier-desc">Um coach com IA que conhece seu perfil e adapta cada sessão ao seu momento — desafios diários, metas e conquistas.</p>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Tudo do Origem incluído</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Simulador de conversas difíceis com IA real</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Desafios diários + metas semanais + XP</div>
+        <div class="limit-pill"><i class="ti ti-info-circle" aria-hidden="true"></i> 30 sessões de coach por mês</div>
+      </div>
+
+      <div class="tier" onclick="iniciarJornada('Maestria', 60)">
+        <div class="tier-head">
+          <div><div class="tier-name">TZDC Maestria</div><div class="tier-desc-sm">Experiência completa</div></div>
+          <div class="tier-price-wrap"><div class="tier-price">R$97,00</div><div class="tier-price-sub">/mês</div></div>
+        </div>
+        <p class="tier-desc">Tudo do Método, mais meditações guiadas, lembretes de hábitos ao longo do dia e curadoria de livros.</p>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Tudo do Método</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Meditações guiadas para reuniões e entrevistas</div>
+        <div class="feat-row"><i class="ti ti-check" aria-hidden="true"></i> Lembretes de hábitos + curadoria de livros</div>
+        <div class="limit-pill"><i class="ti ti-info-circle" aria-hidden="true"></i> 60 sessões de coach por mês</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA 3: QUESTIONÁRIO -->
+  <div class="screen" id="s-questionario">
+    <div class="topbar">
+      <button class="back-btn" onclick="show('s-planos')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Planos</button>
+      <div class="topbar-right">TZDC <span>Origem</span></div>
+    </div>
+    <div class="scroll-body" id="questionario-body"></div>
+  </div>
+
+  <!-- TELA 4: RESULTADO -->
+  <div class="screen" id="s-resultado">
+    <div class="topbar">
+      <button class="back-btn" onclick="show('s-planos')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Início</button>
+      <div class="topbar-right">Seu <span>perfil</span></div>
+    </div>
+    <div class="scroll-body" id="resultado-body"></div>
+  </div>
+
+  <!-- TELA 5: DASHBOARD -->
+  <div class="screen" id="s-home">
+    <div class="scroll-body" style="padding-top:20px">
+      <div class="dash-hero">
+        <div class="dash-top">
+          <div class="dash-avatar" id="d-avatar">RL</div>
+          <div class="dash-info">
+            <div class="dash-name" id="d-name">Bem-vindo!</div>
+            <div class="dash-perfil" id="d-perfil">Perfil TZDC · Nível 3</div>
+          </div>
+          <div class="dash-xp"><div class="dash-xp-val">420 XP</div><div class="dash-xp-lbl">de 600</div></div>
+        </div>
+        <div class="xp-bar"><div class="xp-fill" style="width:70%"></div></div>
+        <div class="xp-info"><span>Progresso para Nível 4</span><span>420 / 600 XP</span></div>
+        <div class="streak-row" id="streak-row"></div>
+      </div>
+      <div id="uso-container"></div>
+      <p class="sec-label">O que fazer hoje</p>
+      <div class="action-grid">
+        <div class="action-card" onclick="show('s-cenarios')">
+          <div class="action-icon blue"><i class="ti ti-message-chatbot" aria-hidden="true"></i></div>
+          <div class="action-title">Simulador IA</div>
+          <div class="action-sub">Pratique uma conversa difícil</div>
+        </div>
+        <div class="action-card" onclick="show('s-desafio')">
+          <div class="action-icon amber"><i class="ti ti-sword" aria-hidden="true"></i></div>
+          <div class="action-title">Desafio do dia</div>
+          <div class="action-sub">5 min · +50 XP</div>
+        </div>
+        <div class="action-card" onclick="show('s-conquistas')">
+          <div class="action-icon green"><i class="ti ti-trophy" aria-hidden="true"></i></div>
+          <div class="action-title">Conquistas</div>
+          <div class="action-sub">3 de 12 desbloqueadas</div>
+        </div>
+        <div class="action-card" onclick="show('s-resultado')">
+          <div class="action-icon purple"><i class="ti ti-chart-radar" aria-hidden="true"></i></div>
+          <div class="action-title">Meu perfil</div>
+          <div class="action-sub">Ver diagnóstico completo</div>
+        </div>
+      </div>
+      <p class="sec-label">Dica de observação de hoje</p>
+      <div class="obs-card">Hoje, antes de falar, observe: quem inicia as conversas no seu ambiente? O que dizem nos primeiros 5 segundos? Anote mentalmente — isso é o método TZDC em ação.</div>
+    </div>
+  </div>
+
+  <!-- TELA 6: DESAFIO -->
+  <div class="screen" id="s-desafio">
+    <div class="topbar">
+      <button class="back-btn" onclick="show('s-home')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Início</button>
+      <div class="topbar-right">Desafio do dia</div>
+    </div>
+    <div class="scroll-body">
+      <div class="desafio-card">
+        <span class="desafio-tag">Dia 4 · Zona social</span>
+        <h2 class="desafio-title">Inicie uma conversa com alguém que você normalmente evita</h2>
+        <p class="desafio-txt">Você já reparou que sempre desvia daquela pessoa no corredor? Hoje o desafio é simples: chegar primeiro e dizer algo genuíno. Não precisa ser longa — uma frase já quebra o padrão.</p>
+        <div class="desafio-steps">
+          <div class="ds"><div class="ds-n">1</div><span>Escolha uma pessoa específica — quem você desvia no corredor?</span></div>
+          <div class="ds"><div class="ds-n">2</div><span>Prepare uma abertura contextual: projeto, café, clima da reunião.</span></div>
+          <div class="ds"><div class="ds-n">3</div><span>Faça hoje. O desconforto é exatamente o músculo que estamos treinando.</span></div>
+          <div class="ds"><div class="ds-n">4</div><span>Registre como foi — observar faz parte do método.</span></div>
+        </div>
+        <div class="da-row">
+          <button class="da-btn" onclick="show('s-cenarios')">Praticar no simulador</button>
+          <button class="da-btn primary" id="btn-desafio" onclick="completarDesafio()">Fiz! +50 XP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA 7: CENÁRIOS -->
+  <div class="screen" id="s-cenarios">
+    <div class="topbar">
+      <button class="back-btn" onclick="show('s-home')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Início</button>
+      <div class="topbar-right">Simulador <span>IA</span></div>
+    </div>
+    <div class="scroll-body">
+      <p class="sec-label">Escolha o cenário de hoje</p>
+      <div class="scenario-list" id="scenario-list"></div>
+      <div class="limite-aviso" id="aviso-cenarios">
+        <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+        Você atingiu o limite de sessões do seu plano este mês. Considere fazer upgrade para continuar praticando.
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA 8: CHAT -->
+  <div class="screen chat-screen" id="s-chat">
+    <div class="coach-hdr">
+      <div class="coach-hdr-top">
+        <button class="back-btn" onclick="show('s-cenarios')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Cenários</button>
+        <span class="chat-tag" id="chat-tag"></span>
+      </div>
+      <div class="persona-row">
+        <div class="p-av" id="p-av"></div>
+        <div><div class="p-name" id="p-name"></div><div class="p-role" id="p-role"></div></div>
+        <div class="p-status"><div class="p-dot"></div>simulando</div>
+      </div>
+      <div class="ctx-bar" id="p-ctx"></div>
+    </div>
+    <div class="sessao-strip">
+      <span id="sessao-perfil"><i class="ti ti-brain" aria-hidden="true"></i> Perfil adaptado · método TZDC</span>
+      <span class="sessao-count" id="sessao-count"></span>
+    </div>
+    <div class="chat-msgs" id="chat-msgs"></div>
+    <div class="limite-aviso" id="aviso-ultima-sessao">
+      <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+      Última sessão disponível este mês. Renova no dia 1º.
+    </div>
+    <div class="fb-bar" id="fb-bar">
+      <div class="fb-lbl">Como você se sentiu?</div>
+      <div class="fb-opts">
+        <button class="fb-btn" onclick="darFeedback('Travei')">Travei</button>
+        <button class="fb-btn" onclick="darFeedback('Nervoso mas fui')">Nervoso mas fui</button>
+        <button class="fb-btn" onclick="darFeedback('Me senti confortável')">Confortável</button>
+        <button class="fb-btn" onclick="darFeedback('Quero tentar de novo')">Tentar de novo</button>
+      </div>
+    </div>
+    <div class="input-area">
+      <textarea id="msg-input" placeholder="Digite sua resposta..." rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="send-btn" onclick="enviar()" aria-label="Enviar mensagem">
+        <i class="ti ti-arrow-up" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- TELA 9: CONQUISTAS -->
+  <div class="screen" id="s-conquistas">
+    <div class="topbar">
+      <button class="back-btn" onclick="show('s-home')"><i class="ti ti-arrow-left" aria-hidden="true"></i> Início</button>
+      <div class="topbar-right">Conquistas</div>
+    </div>
+    <div class="scroll-body">
+      <div class="dash-hero" style="padding:16px">
+        <div class="dash-top">
+          <div class="level-circle"><div class="level-num">3</div><div class="level-lbl">NÍVEL</div></div>
+          <div>
+            <div class="dash-name" style="color:#fff">Explorador Social</div>
+            <div class="dash-perfil">7 dias seguidos · 420 XP</div>
+            <div class="streak-row" id="streak-conq" style="margin-top:8px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="conq-grid" id="conq-grid"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
